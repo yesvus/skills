@@ -1,15 +1,12 @@
 # Agent instructions
 
-This file is the repository-specific entrypoint for coding agents. Update it when the project has real commands, architecture or safety constraints.
+This repository contains **public, portable Agent Skills**. It is not an agent runtime or infrastructure repository.
 
-- Read the project README and any relevant authoritative documents before modifying code.
-- Keep work scoped to the requested issue. Prefer existing tooling and minimal, reviewable changes.
-- Run relevant checks and report exact results, or explain why verification was not possible.
-- Do not disclose credentials or private data in commits, logs or issue descriptions.
-- Do not access production systems, modify secrets, merge, deploy or make destructive changes without explicit authorization for that operation.
-- If a narrower directory contains additional agent instructions, follow them for work in that directory.
-
-Project-specific commands and policies: **add when the stack is chosen**. Do not invent test commands here.
-
-- Keep INSTALL_PROMPT.md user-oriented, accurate for the chosen stack, and
-  aligned with these safety rules; do not advertise setup placeholders.
+- Read `README.md` and the applicable `skills/<name>/SKILL.md` before editing.
+- Put each skill under `skills/<name>/SKILL.md` with valid Agent Skills `name` and `description` frontmatter. Keep optional scripts, references, and assets inside the same skill directory.
+- Make workflows actionable, concise, and harness-neutral wherever practical. Document actual prerequisites and verification steps; do not imply untested behavior is verified.
+- Avoid creating generic skills that only restate available CLI help. Prefer specific repeatable workflows with non-obvious operational knowledge.
+- Never publish secrets, account identifiers, private URLs, internal IPs, private repository contents, customer data, or host-specific environment configuration.
+- Keep destructive, privileged, billable, or production-changing operations behind explicit operator approval and document rollback when relevant.
+- Do not import private files from `yesvus/agents` or edit that repository as a side effect of maintaining this library.
+- No publishing pipeline, registry, deployment resources, or new framework is needed without a separately justified request.
