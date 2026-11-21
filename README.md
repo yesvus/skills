@@ -28,6 +28,11 @@ description: What this skill does and when an agent should use it.
 Describe the concrete workflow, prerequisites, safety boundaries, and verification steps.
 ```
 
+## Published skills
+
+- [`browser-mcp-ui-operations`](skills/browser-mcp-ui-operations/SKILL.md) — safe, verifiable operation of an existing browser through a Playwright-style MCP, including keyboard fallbacks for unstable clicks.
+- [`github-app-browser-bootstrap`](skills/github-app-browser-bootstrap/SKILL.md) — permission-separated GitHub App registration, repository-scoped or all-repository installation, vault key escrow, and acceptance verification.
+
 ## Installing skills
 
 Once skills have been published, install the desired skill using a compatible Agent Skills installer, for example:
@@ -51,4 +56,4 @@ Or clone the repository and link the chosen skill directories into a compatible 
 - Never commit credentials, client data, private infrastructure details, or host-specific configuration.
 - Prefer existing well-maintained tools and standards over new orchestration layers.
 
-**Status:** Initial scaffold; no skills have been published yet.
+**Status:** Two reusable skills published.
