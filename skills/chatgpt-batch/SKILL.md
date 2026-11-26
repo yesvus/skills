@@ -1,15 +1,24 @@
 ---
-name: pr-only-agent-batch
-description: Run a batch of repository tasks through external chat agents that can only open pull requests (for example a web chat agent the owner drives by hand), then take every resulting PR through review, fixes and merge. Use when an owner wants to parallelize issue work onto agents that cannot read your rules, watch CI or answer review comments.
+name: chatgpt-batch
+description: Offload a batch of repository tasks to ChatGPT (or a similar web chat agent with a GitHub connector) to save the orchestrator's own model quota, then take every resulting PR through review, fixes and merge. Use when the chat agent has spare or free quota and can open pull requests, but cannot watch CI, answer review threads or read your standing rules.
 ---
 
-# PR-only agent batch
+# ChatGPT batch
 
-Some agents can clone a repository and open a pull request but cannot see
-webhooks, CI results or review threads, and cannot read the orchestrator's
-standing rules. They are cheap parallel capacity, but every PR they open
-stops at "opened". This skill splits the work so the orchestrator owns
-everything before dispatch and everything after the PR appears.
+## Why this exists
+
+Cost. A frontier coding agent's quota is the scarce resource; a chat agent
+such as ChatGPT often has spare or free quota and, through its GitHub
+connector, can read a repository and open a pull request. Spending that
+capacity on well-scoped implementation work, and keeping the expensive
+agent for selection, review and merge, gets more done per unit of paid
+quota.
+
+The catch: the chat agent works one prompt at a time, does not receive CI,
+review or comment events, cannot keep running after it opens the PR, and
+never sees the orchestrator's standing rules. Every PR it opens stops at
+"opened". This skill splits the work so the orchestrator owns everything
+before dispatch and everything after the PR appears.
 
 Roles:
 

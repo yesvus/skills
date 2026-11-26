@@ -32,7 +32,7 @@ Describe the concrete workflow, prerequisites, safety boundaries, and verificati
 
 - [`browser-mcp-ui-operations`](skills/browser-mcp-ui-operations/SKILL.md) — safe, verifiable operation of an existing browser through a Playwright-style MCP, including keyboard fallbacks for unstable clicks.
 - [`github-app-browser-bootstrap`](skills/github-app-browser-bootstrap/SKILL.md) — permission-separated GitHub App registration, repository-scoped or all-repository installation, vault key escrow, and acceptance verification.
-- [`pr-only-agent-batch`](skills/pr-only-agent-batch/SKILL.md) — dispatch verified repository tasks to external agents that can only open PRs, with self-contained prompts, then take each PR through review, fixes and merge.
+- [`chatgpt-batch`](skills/chatgpt-batch/SKILL.md) — offload verified repository tasks to ChatGPT or a similar chat agent with spare quota and a GitHub connector, via self-contained prompts, then take each PR through review, fixes and merge.
 
 ## Installing skills
 
