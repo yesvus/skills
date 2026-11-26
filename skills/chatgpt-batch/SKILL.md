@@ -1,6 +1,6 @@
 ---
 name: chatgpt-batch
-description: Offload a batch of repository tasks to ChatGPT (or a similar web chat agent with a GitHub connector) to save the orchestrator's own model quota, then take every resulting PR through review, fixes and merge. Use when the chat agent has spare or free quota and can open pull requests, but cannot watch CI, answer review threads or read your standing rules.
+description: Offload a batch of repository tasks to ChatGPT (or a similar web chat agent with a GitHub connector) to save the orchestrator's own model quota, then take every resulting PR through review, fixes and merge. Use when the chat agent has spare or free quota and can open pull requests, but cannot watch CI, answer review threads or read your standing rules. Human-in-the-loop: run it only when the owner explicitly invokes it in the current conversation; never start or queue it on your own.
 ---
 
 # ChatGPT batch
@@ -19,6 +19,11 @@ review or comment events, cannot keep running after it opens the PR, and
 never sees the orchestrator's standing rules. Every PR it opens stops at
 "opened". This skill splits the work so the orchestrator owns everything
 before dispatch and everything after the PR appears.
+
+The owner drives the chat agent by hand, so this is a human-in-the-loop
+workflow. Start it only when the owner explicitly asks for it in the current
+conversation. Do not propose batches for the chat agent on your own, schedule
+them, or treat it as an always-available runner.
 
 Roles:
 
