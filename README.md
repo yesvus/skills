@@ -32,6 +32,7 @@ Describe the concrete workflow, prerequisites, safety boundaries, and verificati
 
 - [`browser-mcp-ui-operations`](skills/browser-mcp-ui-operations/SKILL.md) — safe, verifiable operation of an existing browser through a Playwright-style MCP, including keyboard fallbacks for unstable clicks.
 - [`github-app-browser-bootstrap`](skills/github-app-browser-bootstrap/SKILL.md) — permission-separated GitHub App registration, repository-scoped or all-repository installation, vault key escrow, and acceptance verification.
+- [`chatgpt-batch`](skills/chatgpt-batch/SKILL.md) — offload verified repository tasks to ChatGPT or a similar chat agent with spare quota and a GitHub connector, via self-contained prompts, then take each PR through review, fixes and merge.
 
 ## Installing skills
 
@@ -56,4 +57,4 @@ Or clone the repository and link the chosen skill directories into a compatible 
 - Never commit credentials, client data, private infrastructure details, or host-specific configuration.
 - Prefer existing well-maintained tools and standards over new orchestration layers.
 
-**Status:** Two reusable skills published.
+**Status:** Three reusable skills published.
