@@ -18,7 +18,8 @@ Scope
 Acceptance
 - <observable criterion 1>
 - <observable criterion 2>
-- Tests: add or update tests in <path>. Run `<exact command>` and make it
+- Tests: add or update tests in <path> (or write "no test applies" for
+  docs-only or config-only tasks). Run `<exact command>` and make it
   pass before opening the PR. If a blocker below keeps it from passing,
   open the PR anyway and put the failing command and its output under
   "Blocked".
