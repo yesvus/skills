@@ -22,6 +22,15 @@ Roles:
 Do not drive a consumer chat UI with browser automation to dispatch prompts
 yourself; that usually violates the provider's terms. The owner pastes them.
 
+## Prerequisites
+
+- Repository write access for the orchestrator: push to PR branches, reply
+  to and resolve review threads, merge.
+- A way to receive PR events (CI results, reviews, comments), such as a
+  webhook relay or a harness PR-subscription tool. Without one, check each
+  open PR's state when the owner prompts you or at a slow cadence (tens of
+  minutes, not seconds), and say so in the report.
+
 ## 1. Select candidates
 
 1. List open issues that are repository-only: the change can be written,
@@ -62,7 +71,8 @@ ready to paste without editing.
 Discover PRs by the branch names you assigned, or ask the owner for numbers.
 Then, per PR:
 
-1. **Subscribe to events** (CI, reviews, comments) instead of polling.
+1. **Subscribe to events** (CI, reviews, comments) instead of polling; see
+   Prerequisites for the fallback.
 2. **Draft PRs**: some agents open drafts, and some review bots skip drafts.
    Mark ready for review if review should start.
 3. **Stale base**: if the branch was cut before a newly required check or its
@@ -84,9 +94,11 @@ Then, per PR:
    in a row; fewer, complete pushes keep reviews flowing.
 8. **Resolve only threads you read and addressed.** Reply with what changed
    or why nothing changed.
-9. **Merge** when required checks are green, no thread is open, and the
-   head is the one you reviewed: squash with an expected-head-SHA guard,
-   then unsubscribe and remove any local worktree.
+9. **Merge** when the prompt's acceptance criteria are met, the PR has no
+   "Blocked" section or other unresolved blocker, required checks are
+   green, no thread is open, and the head is the one you reviewed: squash
+   with an expected-head-SHA guard, then unsubscribe and remove any local
+   worktree. A blocked PR is reported to the owner, not merged.
 
 ## 4. Report
 
