@@ -1,6 +1,6 @@
 ---
 name: chatgpt-batch
-description: Offload a batch of repository tasks to ChatGPT (or a similar web chat agent with a GitHub connector) to save the orchestrator's own model quota, then take every resulting PR through review, fixes and merge. Use when the chat agent has spare or free quota and can open pull requests, but cannot watch CI, answer review threads or read your standing rules. Human-in-the-loop: run it only when the owner explicitly invokes it in the current conversation; never start or queue it on your own.
+description: Offload a batch of repository tasks to ChatGPT (or a similar web chat agent with a GitHub connector) to save the orchestrator's own model quota, then take every resulting PR through review, fixes and merge. Use when the chat agent has spare or free quota and can open pull requests, but cannot watch CI, answer review threads or read your standing rules. Human-in-the-loop, so run it only when the owner explicitly invokes it in the current conversation; never start or queue it on your own.
 ---
 
 # ChatGPT batch
