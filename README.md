@@ -34,6 +34,8 @@ Describe the concrete workflow, prerequisites, safety boundaries, and verificati
 - [`github-app-browser-bootstrap`](skills/github-app-browser-bootstrap/SKILL.md) — permission-separated GitHub App registration, repository-scoped or all-repository installation, vault key escrow, and acceptance verification.
 - [`chatgpt-batch`](skills/chatgpt-batch/SKILL.md) — offload verified repository tasks to ChatGPT or a similar chat agent with spare quota and a GitHub connector, via self-contained prompts, then take each PR through review, fixes and merge.
 
+- [`daily-review`](skills/daily-review/SKILL.md) — evidence-based daily and weekly reviews across device activity, calendars, GitHub and conversation context.
+
 ## Installing skills
 
 Once skills have been published, install the desired skill using a compatible Agent Skills installer, for example:
@@ -57,4 +59,4 @@ Or clone the repository and link the chosen skill directories into a compatible 
 - Never commit credentials, client data, private infrastructure details, or host-specific configuration.
 - Prefer existing well-maintained tools and standards over new orchestration layers.
 
-**Status:** Three reusable skills published.
+**Status:** Four reusable skills published.
